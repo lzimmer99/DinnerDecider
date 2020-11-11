@@ -10,8 +10,13 @@ import kotlinx.android.synthetic.main.activity_main.transfer
 
 class MainActivity : AppCompatActivity() {
 
-    val foodList = arrayListOf("Indisches Curry", "Burger", "Maultaschen",
-            "Pfannkuchen", "Spaghetti Carbonara")
+    val foodList = arrayListOf(
+        "Indisches Curry", "Burger", "Maultaschen",
+        "Khachapuri", "Minestrone", "Moussaka"
+
+
+
+    )
     // Liste aus welcher die Gerichte random herausgezogen werden
 
 

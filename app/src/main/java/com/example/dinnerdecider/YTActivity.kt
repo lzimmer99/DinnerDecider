@@ -30,25 +30,46 @@ class YTActivity : YouTubeBaseActivity() {
 
     private fun initUI() {
 
-        val yt_arr: Map<String, String> = mapOf("Indisches Curry" to "9DQ5QaAsCDs")
+        val yt_arr: Map<String, String> = mapOf(
+            "Indisches Curry" to "9DQ5QaAsCDs",
+            "Burger" to "vCXg4tuMpe4",
+            "Maultaschen" to "xA5P75X_xGE",
+            "Khachapuri" to "UgofBvujNHA",
+            "Minestrone" to "Usp-Rgyn2kc",
+            "Moussaka" to "gIZKAuUh34I"
+
+        )
         val cont = intent.getStringExtra(FOOD_Name)
-        val vidId  = yt_arr[cont]
+        val vidId = yt_arr[cont]
 
 
 
         youtubePlayerInit = object : YouTubePlayer.OnInitializedListener {
-            override fun onInitializationSuccess(p0: YouTubePlayer.Provider?, youtubePlayer: YouTubePlayer?, p2: Boolean) {
+            override fun onInitializationSuccess(
+                p0: YouTubePlayer.Provider?,
+                youtubePlayer: YouTubePlayer?,
+                p2: Boolean
+            ) {
                 youtubePlayer?.loadVideo(vidId)
             }
 
-            override fun onInitializationFailure(p0: YouTubePlayer.Provider?, p1: YouTubeInitializationResult?) {
-                Toast.makeText(applicationContext, "Ups...Ein Problem ist aufgetreten!! ", Toast.LENGTH_SHORT).show()
+            override fun onInitializationFailure(
+                p0: YouTubePlayer.Provider?,
+                p1: YouTubeInitializationResult?
+            ) {
+                Toast.makeText(
+                    applicationContext,
+                    "Ups...Ein Problem ist aufgetreten!! ",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
         btnPlay.setOnClickListener(View.OnClickListener {
             youtubePlayer.initialize(YOUTUBE_API_KEY, youtubePlayerInit)
         })
+
+        
     }
 
 }

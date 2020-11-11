@@ -3,7 +3,6 @@
 package com.example.dinnerdecider
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
@@ -32,7 +31,7 @@ class YTActivity : YouTubeBaseActivity() {
     private fun initUI() {
 
         //Array ähnlich Python Dictionary mit den zu den Gerichten zugehörigen Youtube-Video-Keys
-        val yt_arr: Map<String, String> = mapOf(
+        val ytarr: Map<String, String> = mapOf(
             "Indisches Curry" to "9DQ5QaAsCDs",
             "Burger" to "vCXg4tuMpe4",
             "Maultaschen" to "xA5P75X_xGE",
@@ -42,7 +41,7 @@ class YTActivity : YouTubeBaseActivity() {
 
         )
 
-        val vidId = yt_arr[intent.getStringExtra(FOOD_Name)]
+        val vidId = ytarr[intent.getStringExtra(FOOD_Name)]
 
 
 
@@ -67,9 +66,9 @@ class YTActivity : YouTubeBaseActivity() {
             }
         }
 
-        btnPlay.setOnClickListener(View.OnClickListener {
+        btnPlay.setOnClickListener{
             youtubePlayer.initialize(YOUTUBE_API_KEY, youtubePlayerInit)
-        })
+        }
 
 
     }

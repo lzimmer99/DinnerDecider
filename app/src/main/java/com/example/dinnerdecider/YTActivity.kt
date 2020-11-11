@@ -1,3 +1,5 @@
+@file:Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+
 package com.example.dinnerdecider
 
 import android.os.Bundle
@@ -12,9 +14,8 @@ import kotlinx.android.synthetic.main.activity_y_t.*
 class YTActivity : YouTubeBaseActivity() {
 
     companion object {
-        //val VIDEO_ID: String = "9DQ5QaAsCDs"
         const val YOUTUBE_API_KEY: String = "AIzaSyAsD5cg28hy42bnDZJmkgPoaaUshok8dp4"
-        val FOOD_Name = "food_passer"
+        const val FOOD_Name = "food_passer"
     }
 
 
@@ -30,6 +31,7 @@ class YTActivity : YouTubeBaseActivity() {
 
     private fun initUI() {
 
+        //Array ähnlich Python Dictionary mit den zu den Gerichten zugehörigen Youtube-Video-Keys
         val yt_arr: Map<String, String> = mapOf(
             "Indisches Curry" to "9DQ5QaAsCDs",
             "Burger" to "vCXg4tuMpe4",
@@ -39,8 +41,8 @@ class YTActivity : YouTubeBaseActivity() {
             "Moussaka" to "gIZKAuUh34I"
 
         )
-        val cont = intent.getStringExtra(FOOD_Name)
-        val vidId = yt_arr[cont]
+
+        val vidId = yt_arr[intent.getStringExtra(FOOD_Name)]
 
 
 
@@ -69,7 +71,7 @@ class YTActivity : YouTubeBaseActivity() {
             youtubePlayer.initialize(YOUTUBE_API_KEY, youtubePlayerInit)
         })
 
-        
+
     }
 
 }

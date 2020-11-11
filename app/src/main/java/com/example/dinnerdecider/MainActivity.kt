@@ -3,6 +3,7 @@ package com.example.dinnerdecider
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlinx.android.synthetic.main.activity_main.transfer
@@ -33,11 +34,11 @@ class MainActivity : AppCompatActivity() {
 
 
         transfer.setOnClickListener{
+            val cont = selectedFoodTxt.text
             val intent = Intent (this, YTActivity::class.java)
-
+            intent.putExtra(YTActivity.FOOD_Name, cont)
             startActivity(intent)
         }
-
 
     }
 }

@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_y_t.*
 
 class YTActivity : YouTubeBaseActivity() {
     companion object {
-        val VIDEO_ID: String = "YqggV_wGhM0";
+        val VIDEO_ID: String = "9DQ5QaAsCDs";
         val YOUTUBE_API_KEY: String = "AIzaSyAsD5cg28hy42bnDZJmkgPoaaUshok8dp4"
     }
 
